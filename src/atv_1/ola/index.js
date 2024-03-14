@@ -1,5 +1,7 @@
 import { Text } from 'react-native';
 
-export default function ola ( {
-    return <Text>Olá</Text>
-})
+import styles from './styles';
+
+export default function Ola ({children}) {
+        return <Text style={styles.txtOla}>Olá {children}</Text>
+}

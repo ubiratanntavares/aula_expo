@@ -8,12 +8,13 @@ const styles = StyleSheet.create({
         padding: 18, 
         width: '100%',
         borderRadius: 20,
-
+        alignItems: 'center',  
         //bordewidth: 4,
         //borderColor:'',
         //width: 300,
         //marginBottom: 8,
-        //AlignItems: 'center',      
+        
+           
     },  
     paragraph: {
         margin: 24,
@@ -24,7 +25,7 @@ const styles = StyleSheet.create({
     },
 
     imagem: {
-        width: '80%',
+        width: '100%',
         resizeMode: 'center',
     },
     
