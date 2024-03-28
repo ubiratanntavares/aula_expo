@@ -5,12 +5,16 @@ import { StyleSheet, View } from 'react-native';
 //import Atividade1 from './src/atv_1';
 // import nomes from './src/ex_2/listaNomes';
 
-import Exemplo_3 from './src/ex_3';
+import Atividade_3 from './src/atv_3';
+
+import Exemplo_04 from './src/ex_4';
+import Exemplo4 from './src/ex_4';
+
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Exemplo_3 />
+      <Exemplo4 />
       <StatusBar style="auto" />
     </View>
   );
@@ -18,10 +22,11 @@ export default function App() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: '1',
     backgroundColor: 'orange',
     alignItems: 'center',
     justifyContent: 'center',
     padding:18,
   },
+
 });
