@@ -24,6 +24,15 @@ texto:{
     color: '#b71c1c',
 
 },
+
+textogrifado:{
+    fontSize: 20,
+    marginVertical: 0,
+    padding: 6,
+    color: '#b71c1c',
+
+},
+
 input: {
     fontSize: 25,
     width: '80%',
