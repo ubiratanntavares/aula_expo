@@ -33,6 +33,11 @@ textogrifado:{
 
 },
 
+unir:{
+    flexDirection:'row',
+},
+
+
 input: {
     fontSize: 25,
     width: '80%',

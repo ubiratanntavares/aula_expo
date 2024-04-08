@@ -13,49 +13,45 @@ import styles from './styles';
 
 export default function Exemplo4 (){
     
-    const [txtDigitado, setTxtDigitado] = useState ('Texto digitado');
-    const [txt2, setTxt2] = useState ('');
-    const [txtTela, setTxtTela] = useState ('');
-    const [txt1, setTxt1] = useState ('');
+    const [txt1, setTxt1] = useState (''); //Nome
     const [txtTela1, setTxtTela1] = useState ('');
-
-    function atualizaTextoHandle(txt){
-        setTxtDigitado(txt);
-    }
-
+    const [txt2, setTxt2] = useState (''); //Sobrenome
+    const [txtTela, setTxtTela] = useState ('');
+  
     function handleExibeTexto (){
+        setTxtTela1(txt1);
+        setTxt1('');
         setTxtTela(txt2);
         setTxt2('');
     }
-
 
     return(
         <View style = {styles.container}>
             <Text style = {styles.titulo}>Exemplo 4</Text>
 
-            <Text style = {styles.texto}>{txtTela}</Text>
+            <View style = {styles.unir}>
+            
+            <Text style = {styles.texto}>{[txtTela1]}</Text>
+            <Text style = {styles.texto}>{[txtTela]}</Text>
+            
+            </View>
 
             <Text style = {styles.textogrifado}>Nome:</Text>
          
-            <TextInput 
-            style = {styles.input}
-            onChangeText={(vlr) => setTxt1 (vlr)}
+            <TextInput style = {styles.input} onChangeText={(vlr) => setTxt1 (vlr)}
             value={txt1}
             />
 
             <Text style = {styles.textogrifado}>Sobrenome:</Text>
 
-            <TextInput 
-            style = {styles.input}
-            onChangeText={(vlr) => setTxt2 (vlr)}
-            value={txt2}
+            <TextInput style = {styles.input} onChangeText={(vlr) => setTxt2 (vlr)}
+            value={txt2} 
             />
 
-            <Pressable 
-            style={({ pressed }) => pressed ? [styles.botao, styles.botaoPress] : styles.botao}
+            <Pressable style={({ pressed }) => pressed ? [styles.botao, styles.botaoPress] : styles.botao}
             onPress={() => handleExibeTexto()}
             >
-                <Text style = {styles.txtBotao}>Exibir texto</Text>
+                <Text style = {styles.txtBotao}>Nome completo</Text>
             </Pressable>
         </View>
 
