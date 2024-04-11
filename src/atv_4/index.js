@@ -1,60 +1,92 @@
+import { useState } from 'react';
 import { View, Text, TextInput, Pressable } from 'react-native';
-import {useState} from 'react';
 
 import styles from './styles';
 
-//export default function Atividade4 () {
-    //return(
-        //<View style={styles.container}>
-           // <Text style={styles.titulo}>Atividade 4</Text>
-        //</View>
-    //)
-//}
+export default function Atividade4() {
 
-export default function Exemplo4 (){
-    
-    const [txt1, setTxt1] = useState (''); //Nome
-    const [txtTela1, setTxtTela1] = useState ('');
-    const [txt2, setTxt2] = useState (''); //Sobrenome
-    const [txtTela, setTxtTela] = useState ('');
-  
-    function handleExibeTexto (){
-        setTxtTela1(txt1);
-        setTxt1('');
-        setTxtTela(txt2);
-        setTxt2('');
+    const [nomeCompleto, setNomeCompleto] = useState('');
+    const [nome, setNome] = useState('');
+    const [sobrenome, setSobrenome] = useState('');
+    const [isFocusNome, setIsFocusNome] = useState(false);
+    const [isFocusSobrenome, setIsFocusSobrenome] = useState(false);
+
+    function handleJuntaNome() {
+        setNomeCompleto(`${nome} ${sobrenome}`);
+        // setNomeCompleto(nome + ' ' + sobrenome);
+        setNome('');
+        setSobrenome('');
     }
 
-    return(
-        <View style = {styles.container}>
-            <Text style = {styles.titulo}>Exemplo 4</Text>
+    return (
+        <View style={styles.container}>
+            <Text style={styles.titulo}>Atividade 4</Text>
 
-            <View style = {styles.unir}>
-            
-            <Text style = {styles.texto}>{[txtTela1]}</Text>
-            <Text style = {styles.texto}>{[txtTela]}</Text>
-            
-            </View>
+            <Text style={styles.texto}>{nomeCompleto}</Text>
 
-            <Text style = {styles.textogrifado}>Nome:</Text>
-         
-            <TextInput style = {styles.input} onChangeText={(vlr) => setTxt1 (vlr)}
-            value={txt1}
+            <Text style={styles.label}>Nome</Text>
+            <TextInput
+                style={
+                    isFocusNome ?
+                        [styles.input,
+                        {
+                            color: '#ffcdd2',
+                            backgroundColor: '#b71c1c',
+                            outline: 'none'
+                        }]
+                        :
+                        styles.input
+                }
+                onChangeText={(nm) => setNome(nm)}
+                value={nome}
+                onFocus={() => setIsFocusNome(true)}
+                onBlur={() => setIsFocusNome(false)}
             />
 
-            <Text style = {styles.textogrifado}>Sobrenome:</Text>
-
-            <TextInput style = {styles.input} onChangeText={(vlr) => setTxt2 (vlr)}
-            value={txt2} 
+            <Text style={styles.label}>Sobrenome</Text>
+            <TextInput
+                style={
+                    isFocusSobrenome ?
+                        [styles.input,
+                        {
+                            color: '#ffcdd2',
+                            backgroundColor: '#b71c1c',
+                            outline: 'none'
+                        }]
+                        :
+                        styles.input
+                }
+                onChangeText={(sbnm) => setSobrenome(sbnm)}
+                value={sobrenome}
+                onFocus={() => setIsFocusSobrenome(true)}
+                onBlur={() => setIsFocusSobrenome(false)}
             />
 
-            <Pressable style={({ pressed }) => pressed ? [styles.botao, styles.botaoPress] : styles.botao}
-            onPress={() => handleExibeTexto()}
+            <Pressable
+                style={
+                    ({ pressed }) => pressed ?
+                        [styles.botao, styles.botaoPress]
+                        :
+                        styles.botao
+                }
+                onPress={() => handleJuntaNome()}
             >
-                <Text style = {styles.txtBotao}>Nome completo</Text>
+                {
+                    ({ pressed }) => (
+                        <Text 
+                            style={
+                                pressed ? 
+                                    [styles.txtBotao, 
+                                        { color: '#b71c1c' }] 
+                                    : 
+                                        styles.txtBotao
+                            }
+                        >
+                            Exibir nome completo
+                        </Text>
+                    )
+                }
             </Pressable>
         </View>
-
-    );
+    )
 }
-
