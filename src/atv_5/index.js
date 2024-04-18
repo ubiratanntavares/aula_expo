@@ -8,7 +8,7 @@ export default function Atividade5() {
     const [isFocusN1, setIsFocusN1] = useState(false);
     const [isFocusN2, setIsFocusN2] = useState(false);
     const [isFocusTotal, setIsFocusTotal] = useState(false);
-    const [textoSaida, setTextoSaida] = useState('Texto inicial');
+    const [mudsinal,setmudsinal] = useState(''); //const para mudar o sinal
 
 
     const [n1, setN1] = useState(0); 
@@ -30,6 +30,27 @@ export default function Atividade5() {
     function zerar() {
         setTotal('');
     }
+    function handleOne(){
+        soma(),
+        setmudsinal('+')
+    }
+    function handleTwo(){
+        subtracao(),
+        setmudsinal('-')
+    }
+    function handleTree(){
+        multi(),
+        setmudsinal('*')
+    }
+    function handleFour(){
+        divisao(),
+        setmudsinal('/')
+    }
+    function handleZerar(){
+        zerar(),
+        setmudsinal('')
+    }
+
 
     return (
         <View style={styles.container}>
@@ -60,7 +81,7 @@ export default function Atividade5() {
             />
         
 
-        <Text style={styles.txtSaida}> + </Text>
+        <Text style={styles.txtSaida}> {mudsinal} </Text>
 
             <Text style={styles.textLabel}> 2º número </Text>
             <TextInput
@@ -82,7 +103,7 @@ export default function Atividade5() {
                 value={n2}
             />
 
-textoSaida
+
 
             <Text style={[styles.txtSaida, { margin: 0 }]}> = </Text>
 
@@ -108,7 +129,7 @@ textoSaida
         <View style={styles.newbutton}>
 
             <Pressable
-                onPress={() => soma()}
+                onPress={handleOne}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -120,7 +141,7 @@ textoSaida
             </Pressable>
 
             <Pressable
-                onPress={() => subtracao()}
+                onPress={handleTwo}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -132,7 +153,7 @@ textoSaida
             </Pressable>
 
             <Pressable
-                onPress={() => multi()}
+                onPress={handleTree}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -144,7 +165,7 @@ textoSaida
             </Pressable>
 
             <Pressable
-                onPress={() => divisao()}
+                onPress={handleFour}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -157,7 +178,7 @@ textoSaida
             </View>
 
             <Pressable
-                onPress={() => zerar()}
+                onPress={handleZerar}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button2, styles.buttonTouch] 

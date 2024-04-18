@@ -11,7 +11,8 @@ export default function Exemplo5() {
 
     const [n1, setN1] = useState(0); 
     const [n2, setN2] = useState(0); 
-    const [total, setTotal] = useState(0); 
+    const [total, setTotal] = useState(0);
+
 
     function soma() {
         setTotal(parseFloat(n1) + parseFloat(n2));
