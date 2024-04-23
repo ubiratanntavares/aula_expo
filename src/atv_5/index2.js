@@ -17,25 +17,39 @@ export default function Atividade5() {
 
     function soma() {
         setTotal(parseFloat(n1) + parseFloat(n2));
-        setmudsinal('+');
     }
     function subtracao() {
         setTotal(parseFloat(n1) - parseFloat(n2));
-        setmudsinal('-');
     }
     function multi() {
         setTotal(parseFloat(n1) * parseFloat(n2));
-        setmudsinal('*');
     }
     function divisao() {
         setTotal(parseFloat(n1) / parseFloat(n2));
-        setmudsinal('/');
     }
     function zerar() {
         setTotal('');
-        setmudsinal('');
     }
-
+    function handleOne(){
+        soma(),
+        setmudsinal('+')
+    }
+    function handleTwo(){
+        subtracao(),
+        setmudsinal('-')
+    }
+    function handleTree(){
+        multi(),
+        setmudsinal('*')
+    }
+    function handleFour(){
+        divisao(),
+        setmudsinal('/')
+    }
+    function handleZerar(){
+        zerar(),
+        setmudsinal('')
+    }
 
 
     return (
@@ -115,7 +129,7 @@ export default function Atividade5() {
         <View style={styles.newbutton}>
 
             <Pressable
-                onPress={soma}
+                onPress={handleOne}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -127,7 +141,7 @@ export default function Atividade5() {
             </Pressable>
 
             <Pressable
-                onPress={subtracao}
+                onPress={handleTwo}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -139,7 +153,7 @@ export default function Atividade5() {
             </Pressable>
 
             <Pressable
-                onPress={multi}
+                onPress={handleTree}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -151,7 +165,7 @@ export default function Atividade5() {
             </Pressable>
 
             <Pressable
-                onPress={divisao}
+                onPress={handleFour}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button, styles.buttonTouch] 
@@ -164,7 +178,7 @@ export default function Atividade5() {
             </View>
 
             <Pressable
-                onPress={zerar}
+                onPress={handleZerar}
                 style={
                     ({pressed}) => pressed ? 
                         [styles.button2, styles.buttonTouch] 
