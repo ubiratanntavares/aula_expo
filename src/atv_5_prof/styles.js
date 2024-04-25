@@ -23,46 +23,15 @@ const styles = StyleSheet.create({
       textAlign: 'center', 
       color: '#E91E63',     
     }, 
-    txtEntrada: {
-      borderWidth: 4, 
-      textAlign: 'center', 
-      fontSize: 22, 
-      borderColor: '#E91E63', 
-      // height: 50, 
-      color: '#E53935', 
-      borderRadius: 10, 
-      marginTop: 10, 
-      padding: 10
-    }, 
-    button: {
-      backgroundColor: '#E91E63', 
-      height: 60, 
-      justifyContent: 'center', 
-      borderRadius: 10, 
-      marginTop: 20, 
-      width: '20%', 
-    }, 
-    buttonTouch: {
-        backgroundColor: '#C51162', 
-    }, 
-    textButton: {
-      fontSize: 30, 
-      color: '#FF80AB', 
-      textAlign: 'center', 
-    }, 
     textLabel: {
       fontSize: 16, 
       fontWeight: 'bold', 
       color: '#C51162',     
     }, 
-    botoes: {
+    containerBotoes: {
       flexDirection: 'row', 
-      width: '100%', 
       justifyContent: 'space-between'
     }, 
-    width100: {
-      width: '100%', 
-    }
   });
   
   export default styles;
