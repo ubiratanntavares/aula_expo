@@ -1,4 +1,4 @@
-import { } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     input:{
@@ -7,7 +7,9 @@ const styles = StyleSheet.create({
         width: '50%',
         color: 'lightpray',
         fontSize: 50,
-        
+        backgroundColor: '#aaa',
+        borderRadius: 20,
+        margin: 5,
     },
 })
 
